@@ -22,10 +22,6 @@ def callback(msg): # Define a function called 'callback' that receives a paramet
   x_val = msg.transforms[-1].transform.translation.x
   steering_float = x_val
   
-  throttle_float = z_val/(5.0)
-  if(throttle_float >= 1.0):
-    throttle_float = 0.99
-  
   if(steering_float >= 1.0):
     steering_float = 0.99
   elif(steering_float <= -1.0):
