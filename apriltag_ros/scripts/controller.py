@@ -21,8 +21,8 @@ STEERING_TOPIC_NAME = '/steering'
 THROTTLE_TOPIC_NAME = '/throttle'
 
 def line_follower(data):
-
-  if centroid == 0:
+  distance = data
+  if distance == 0:
           steering_float = 0.0
           steering_pub.publish(steering_float)
       elif centroid == -1:
@@ -82,6 +82,7 @@ def callback(msg): # Define a function called 'callback' that receives a paramet
     steering_float = 0.99
   elif(steering_float <= -1.0):
     steering_float = -0.99
+  line_follower(z_val)
 
   
   steering_pub.publish(steering_float)

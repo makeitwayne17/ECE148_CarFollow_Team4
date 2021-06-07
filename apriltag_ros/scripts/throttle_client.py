@@ -11,7 +11,7 @@ kit = ServoKit(channels=16)
     throttle servo is on channel 0 
 '''
 # throttle_scale = 0.03  # scale down sensitive throttle
-throttle_scale = 0.5  # scale down sensitive throttle
+throttle_scale = 0.075  # scale down sensitive throttle
 
 def callback(data):
     # output_start= rospy.get_param("/Throttle_max_reverse")
